@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- pojo类名别名的设置 -->
+<configuration>
+	<typeAliases>
+		<package name="cn.dang.babasport.pojo"/>
+	</typeAliases>
+</configuration>
