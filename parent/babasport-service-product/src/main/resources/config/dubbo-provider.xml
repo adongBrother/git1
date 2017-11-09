@@ -20,13 +20,17 @@
 		http://code.alibabatech.com/schema/dubbo        
 		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 		
-	<!-- dubbo提供方配置 -->
+	<!-- dubbo服务提供方配置 -->
 	
 	<!-- dubbo服务名称 -->
 	<dubbo:application name="service-product"/>
 	<!-- 配置dubbo的注册中心 -->
-	<dubbo:registry protocol="zookeeper" address="192.168.88.2:2181"/>
+	<!-- <dubbo:registry protocol="zookeeper" address="192.168.88.2:2181"/> -->
+	<!-- 配置dubbo的直连,协议 -->
+	<dubbo:registry address="N/A"/>
+	<dubbo:protocol name="dubbo" port="20880"/>
 	<!-- 配置暴露的服务 -->
 	<dubbo:service ref="bbsTestService" interface="cn.dang.babasport.service.test.BbsTestService"/>
+	<dubbo:service ref="brandService" interface="cn.dang.babasport.service.product.BrandService"/>
 	
 </beans>

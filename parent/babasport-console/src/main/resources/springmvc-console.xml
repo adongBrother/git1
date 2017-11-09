@@ -25,8 +25,15 @@
 	
 	<!-- 配置3大组件 -->
 	<!-- 处理器映射器,和处理器适配器 -->
-	<!-- 加载类型转换器,json解析器 -->
-	<mvc:annotation-driven/>
+	<!-- 可加载类型转换器,json解析器 -->
+	<bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+		<property name="converters">
+			<set>
+				<bean class="cn.dang.babasport.converter.CustomParamsConverter"/>
+			</set>
+		</property>
+	</bean>
+	<mvc:annotation-driven conversion-service="conversionService"/>
 	
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
